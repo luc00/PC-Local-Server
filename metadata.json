@@ -2,5 +2,7 @@
   "name": "Local AI Server Studio",
   "description": "Guida completa, calcolatore requisiti hardware e configuratore per trasformare il tuo PC in un server AI locale con Ollama, llama.cpp, vLLM e API OpenAI.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

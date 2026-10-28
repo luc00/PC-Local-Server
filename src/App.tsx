@@ -12,7 +12,7 @@ import { ApiTestBench } from './components/ApiTestBench.tsx';
 import { LanClientsGuide } from './components/LanClientsGuide.tsx';
 import { VramCalculator } from './components/VramCalculator.tsx';
 import { GlossarioComponent } from './components/GlossarioComponent.tsx';
-import { SERVER_ICON_BASE64 } from './constants/assets.ts';
+import { ServerIcon } from './components/ServerIcon.tsx';
 import { BookOpen, ShieldCheck, ChevronRight } from 'lucide-react';
 
 export default function App() {
@@ -79,13 +79,9 @@ export default function App() {
           <div className="p-4 rounded border border-[#DDD3C1] bg-[#FDFBF7] flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="h-8 w-7 border border-[#D5C9B5] rounded bg-[#F4EFE6] p-0.5 shrink-0">
-                <img 
-                  src={SERVER_ICON_BASE64} 
-                  alt="Server icon" 
+                <ServerIcon 
                   className="h-full w-full object-contain"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = './server-icon.png';
-                  }}
+                  alt="Server icon"
                 />
               </div>
               <div className="text-left">

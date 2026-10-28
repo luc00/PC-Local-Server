@@ -9,7 +9,7 @@ import {
   BookOpen,
   Compass
 } from 'lucide-react';
-import { SERVER_ICON_BASE64 } from '../constants/assets.ts';
+import { ServerIcon } from './ServerIcon.tsx';
 
 export type TabType = 'requisiti' | 'configuratore' | 'modelli' | 'playground' | 'lan_clients' | 'vram_calc' | 'glossario';
 
@@ -44,14 +44,9 @@ export const Header: React.FC<HeaderProps> = ({
             title="Torna alla Home"
           >
             <div className="h-11 w-10 border border-[#C5B7A0] rounded bg-[#F4EFE6] flex items-center justify-center p-0.5 group-hover:border-[#8B4513] transition shadow-xs overflow-hidden">
-              <img 
-                src={SERVER_ICON_BASE64} 
-                alt="Icona Server Rack AI" 
+              <ServerIcon 
                 className="h-full w-full object-contain"
-                onError={(e) => {
-                  // Fallback to relative file path if base64 ever fails
-                  (e.currentTarget as HTMLImageElement).src = './server-icon.png';
-                }}
+                alt="Icona Server Rack AI"
               />
             </div>
             <div>

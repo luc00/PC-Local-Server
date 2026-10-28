@@ -3,13 +3,14 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(() => {
+export default defineConfig(({ command }) => {
   return {
-    base: '/PC-Local-Server/',
+    // In dev mode (AI Studio preview) serve from root '/'; on GitHub Actions production build serve from '/PC-Local-Server/'
+    base: command === 'serve' ? '/' : '/PC-Local-Server/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': path.resolve(import.meta.dirname, '.'),
       },
     },
     server: {

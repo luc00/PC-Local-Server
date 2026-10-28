@@ -12,6 +12,7 @@ import { ApiTestBench } from './components/ApiTestBench.tsx';
 import { LanClientsGuide } from './components/LanClientsGuide.tsx';
 import { VramCalculator } from './components/VramCalculator.tsx';
 import { GlossarioComponent } from './components/GlossarioComponent.tsx';
+import { SERVER_ICON_BASE64 } from './constants/assets.ts';
 import { BookOpen, ShieldCheck, ChevronRight } from 'lucide-react';
 
 export default function App() {
@@ -79,9 +80,12 @@ export default function App() {
             <div className="flex items-center gap-3">
               <div className="h-8 w-7 border border-[#D5C9B5] rounded bg-[#F4EFE6] p-0.5 shrink-0">
                 <img 
-                  src="/assets/aistudio/______-81-1_acc5d854.png" 
+                  src={SERVER_ICON_BASE64} 
                   alt="Server icon" 
                   className="h-full w-full object-contain"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = './server-icon.png';
+                  }}
                 />
               </div>
               <div className="text-left">
